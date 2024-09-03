@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --env-file=.env.dev src/index.js",
+    "docker:build": "docker build -t my-app/express-api:latest-dev .",
+    "docker:run": "docker run -p 3000:3000 -v ./dev:/user/src/app --name api my-app/express-api:latest-dev",
+    "docker:stop": "docker stop api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4"
+  }
+}
